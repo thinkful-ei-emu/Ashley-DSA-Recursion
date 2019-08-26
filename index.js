@@ -1,5 +1,5 @@
 
-//Question 1:
+// Question 1:
 // Input: 3
 // Output:
 // 3: Another sheep jump over the fence
@@ -28,20 +28,21 @@
 // powerCalculatorRec(10,2) should return 100
 // powerCalculatorRec(10,-2) should return exponent should be >= 0
 
-const powerCalculator = function (base, exp) {
-  //Base case
-  if (exp < 0) {
-    console.log(`exponenet should be >= 0`);
-    return;
-  }
+// const powerCalculator = function (base, exp) {
+//   //Base case
+//   if (exp < 0) {
+//     return 'exponenet should be >= 0';
+    
+//   }
 
-  //General case
-  powerCalculator(base, exp - 1); 
-  return Math.pow(base, exp);
+//   //General case
+//   powerCalculator(base, exp - 1); 
+//   return Math.pow(base, exp);
 
-};
+// };
 
 console.log(powerCalculator(10, 2));
+console.log(powerCalculator(10, -2));
 
 
 //Question 7:
