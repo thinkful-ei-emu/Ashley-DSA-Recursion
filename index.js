@@ -45,21 +45,39 @@
 // console.log(powerCalculator(10, -2));
 
 
-//Question 3
-//Write a function that reverses a string. 
-//Take a string as input, reverse the string, and return the new string.
+// Question 3
+// Write a function that reverses a string. 
+// Take a string as input, reverse the string, and return the new string.
 
-const reverseStr = function(str) {
-  //Base case
-  if(str.length === 0){    
-    return '';
+// const reverseStr = function(str) {
+//   //Base case
+//   if(str.length === 0){    
+//     return '';
+//   }
+//   //General case  
+//   let newChar = str[str.length-1];
+//   return newChar + reverseStr(str.slice(0, str.length-1));
+// };
+
+// console.log(reverseStr('cat'));
+
+
+//Question 4
+// input 2 should get output 3 (given n give me the trianglular number)
+// input 3 ouput 6
+
+const triangularNum = function(n) {
+  if(n === 0) {
+    return 0;
   }
-  //General case  
-  let newChar = str[str.length-1];
-  return newChar + reverseStr(str.slice(0, str.length-1));
-};
 
-console.log(reverseStr('cat'));
+  return n + triangularNum(n - 1);
+
+};
+console.log(triangularNum(2));
+console.log(triangularNum(3));
+
+
 
 
 //Question 7:
