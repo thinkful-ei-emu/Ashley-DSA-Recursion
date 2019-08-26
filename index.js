@@ -21,12 +21,12 @@
 
 // total(3);
 
-//Question 2:
+// //Question 2:
 
-// Write a function called powerCalculator() that takes two parameters, an integer as a base, and another integer as an exponent. 
-//The function returns the value of the base raised to the power of the exponent. Use only exponents greater than or equal to 0 (positive numbers)
-// powerCalculatorRec(10,2) should return 100
-// powerCalculatorRec(10,-2) should return exponent should be >= 0
+// // Write a function called powerCalculator() that takes two parameters, an integer as a base, and another integer as an exponent. 
+// //The function returns the value of the base raised to the power of the exponent. Use only exponents greater than or equal to 0 (positive numbers)
+// // powerCalculatorRec(10,2) should return 100
+// // powerCalculatorRec(10,-2) should return exponent should be >= 0
 
 // const powerCalculator = function (base, exp) {
 //   //Base case
@@ -45,9 +45,9 @@
 // console.log(powerCalculator(10, -2));
 
 
-// Question 3
-// Write a function that reverses a string. 
-// Take a string as input, reverse the string, and return the new string.
+// // Question 3
+// // Write a function that reverses a string. 
+// // Take a string as input, reverse the string, and return the new string.
 
 // const reverseStr = function(str) {
 //   //Base case
@@ -62,21 +62,39 @@
 // console.log(reverseStr('cat'));
 
 
-//Question 4
-// input 2 should get output 3 (given n give me the trianglular number)
-// input 3 ouput 6
+// //Question 4
+// // input 2 should get output 3 (given n give me the trianglular number)
+// // input 3 ouput 6
 
-const triangularNum = function(n) {
-  if(n === 0) {
-    return 0;
+// const triangularNum = function(n) {
+//   if(n === 0) {
+//     return 0;
+//   }
+
+//   return n + triangularNum(n - 1);
+
+// };
+// console.log(triangularNum(2));
+// console.log(triangularNum(3));
+
+//Question 5
+// Input: 02/20/2020
+// Output: 02202020
+
+const strSplitter = function(str) {
+
+  if(str.length === 0) {
+    return '';
   }
 
-  return n + triangularNum(n - 1);
-
+  const char = str.charAt(0);
+  if(char !== '/'){
+    return char + strSplitter(str.slice(1))
+  }
+  
 };
-console.log(triangularNum(2));
-console.log(triangularNum(3));
 
+console.log(strSplitter('02/20/2020'));
 
 
 
