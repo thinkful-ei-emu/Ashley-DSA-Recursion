@@ -45,7 +45,7 @@
 // console.log(powerCalculator(10, -2));
 
 
-// // Question 3
+// // Question 3:
 // // Write a function that reverses a string. 
 // // Take a string as input, reverse the string, and return the new string.
 
@@ -62,7 +62,7 @@
 // console.log(reverseStr('cat'));
 
 
-// //Question 4
+// //Question 4:
 // // input 2 should get output 3 (given n give me the trianglular number)
 // // input 3 ouput 6
 
@@ -77,25 +77,42 @@
 // console.log(triangularNum(2));
 // console.log(triangularNum(3));
 
-//Question 5
+//Question 5:
 // Input: 02/20/2020
 // Output: 02202020
 
-const strSplitter = function(str) {
+// const strSplitter = function(str) {
 
-  if(str.length === 0) {
-    return '';
-  }
+//   if(str.length === 0) {
+//     return '';
+//   }
 
-  const char = str.charAt(0);
-  if(char !== '/'){
-    return char + strSplitter(str.slice(1))
-  }
+//   const char = str.charAt(0);
+//   if(char !== '/'){
+//     return char + strSplitter(str.slice(1));
+//   }
+
+//   return strSplitter(str.slice(1));
   
+// };
+
+// console.log(strSplitter('02/20/2020'));
+
+//Question 6
+
+const fibonacci = function(n) {
+  //base code
+
+  if(n < 2) {
+    return n;
+  } 
+
+  //general code
+  return fibonacci(n- 1) + fibonacci(n - 2);
+ 
 };
 
-console.log(strSplitter('02/20/2020'));
-
+console.log(fibonacci(7));
 
 
 //Question 7:
