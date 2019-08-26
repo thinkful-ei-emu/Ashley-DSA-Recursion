@@ -100,19 +100,19 @@
 
 //Question 6
 
-const fibonacci = function(n) {
-  //base code
+// const fibonacci = function(n) {
+//   //base code
 
-  if(n < 2) {
-    return n;
-  } 
+//   if(n < 2) {
+//     return n;
+//   } 
 
-  //general code
-  return fibonacci(n- 1) + fibonacci(n - 2);
+//   //general code
+//   return fibonacci(n- 1) + fibonacci(n - 2);
  
-};
+// };
 
-console.log(fibonacci(7));
+// console.log(fibonacci(7));
 
 
 //Question 7:
@@ -134,3 +134,64 @@ console.log(fibonacci(7));
 
 // console.log(factorial(5));
 // console.log(factorial(4));
+
+//Question 8:
+
+// const maze = function(mazeArr, x, y){
+//   let location = mazeArr[y][x];
+//   console.log(location);
+
+
+// };
+// let mySmallMaze = [
+//   [' ', ' ', ' '],
+//   [' ', '*', ' '],
+//   [' ', ' ', 'e']
+// ];
+// console.log(maze(mySmallMaze, 3, 3));
+
+//Question 9:
+
+//Question 10:
+//input east
+//output 24 combinations
+const anagrams = function(str) {
+  //base case
+  if(str.length === 0) {
+    return '';
+  }
+
+  let char = str.charAt(0);
+ 
+  // if(str.charAt(0) === str.charAt(str.length-1)){
+  //   index + 1;
+  // }
+  // else {
+  //   index + 2;
+  // }
+ 
+  return char + anagrams(str.slice(1));
+
+ 
+  
+}
+
+console.log(anagrams('east'));
+
+//Question 11:
+
+//Question 12: 
+
+const binaryRep = function(num) {
+
+  //base case
+
+  if(num <= 0) {
+    return '';
+  }
+
+  let binary = num % 2;
+  return binaryRep(Math.floor(num/2)) + binary;
+}
+
+console.log(binaryRep(5));
