@@ -103,8 +103,11 @@
 // const fibonacci = function(n) {
 //   //base code
 
-//   if(n < 2) {
-//     return n;
+//   if(n <= 0) {
+//     return 0;
+//   }
+//   if (n <= 2) {
+//     return 1;
 //   } 
 
 //   //general code
@@ -137,61 +140,82 @@
 
 //Question 8:
 
-// const maze = function(mazeArr, x, y){
-//   let location = mazeArr[y][x];
-//   console.log(location);
+// const maze = function(labyrinth, position=0, row, col, direction='S',path){
+//   if(col<0 || row < 0){
+//       return;
+//   }
+//   if(col>=labyrinth[0].length || row>=labyrinth.length){
+//       return;
+//   }
+ 
+//   path[position] = direction;
+//   position++;
 
+//   if (labyrinth[row][col] === 'e'){
+//       PrintPath(path, 1, position - 1);
+//       return;
+//   }
+//   if (labyrinth[row][col] === ' ') {
+//       // The current cell is free. Mark it as visited
+//       labyrinth[row][col] = 's';
+//       // Invoke recursion to explore all possible directions
+//       maze(labyrinth,position,row, col - 1, 'L',path); // left
+//       maze(labyrinth,position,row - 1, col, 'U',path); // up
+//       maze(labyrinth,position,row, col + 1, 'R',path); // right
+//       maze(labyrinth,position,row + 1, col, 'D',path); // down
+//       // Mark back the current cell as free
+//       //lab[row][col] = ' ';
+//   }
+//   // Remove the last direction from the path
+//   position--;
 
-// };
-// let mySmallMaze = [
-//   [' ', ' ', ' '],
-//   [' ', '*', ' '],
-//   [' ', ' ', 'e']
-// ];
-// console.log(maze(mySmallMaze, 3, 3));
+// }
+// const PrintPath = function (path, startPos, endPos){
+//   console.log('Found path to the exit: ');
+//   console.log(path);
+// }
+
 
 //Question 9:
 
 //Question 10:
 //input east
 //output 24 combinations
-const anagrams = function(str) {
+const anagrams = function(prefix, str) {
   //base case
-  if(str.length === 0) {
-    return '';
+  if(str.length <= 1) {
+    console.log(`the anagram is ${prefix}${str}`);
+
+    
   }
+  else {
 
-  let char = str.charAt(0);
- 
-  // if(str.charAt(0) === str.charAt(str.length-1)){
-  //   index + 1;
-  // }
-  // else {
-  //   index + 2;
-  // }
- 
-  return char + anagrams(str.slice(1));
-
- 
-  
-}
-
-console.log(anagrams('east'));
+    for(let i = 0; i < str.length; i++) {
+     
+      let currentLetter = str.substring(i, i + 1);
+      let previousLetters = str.substring(0, i);
+      let restLetters = str.substring(i + 1);
+      anagrams(prefix + currentLetter, previousLetters + restLetters);
+    
+    }  
+  }     
+};
+console.log(anagrams('', 'east'));
 
 //Question 11:
 
 //Question 12: 
 
-const binaryRep = function(num) {
+// const binaryRep = function(num) {
 
-  //base case
+//   //base case
 
-  if(num <= 0) {
-    return '';
-  }
+//   if(num <= 0) {
+//     return '';
+//   }
 
-  let binary = num % 2;
-  return binaryRep(Math.floor(num/2)) + binary;
-}
+//   let binary = num % 2;
+//   return binaryRep(Math.floor(num/2)) + binary;
+// }
 
-console.log(binaryRep(5));
+// console.log(binaryRep(5));
